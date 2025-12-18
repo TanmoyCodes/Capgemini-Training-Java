@@ -1,0 +1,12 @@
+# IntelliJ
+.idea/
+
+# VS Code
+.vscode/
+
+# Java
+*.class
+*.log
+*.jar
+out/
+target/

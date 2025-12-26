@@ -5,6 +5,13 @@ public class palidrome {
         int right = arr.length-1;
 
         boolean isPalindrome = true;
+        
+        System.out.println("Size of the arr" + arr.length);
+        if(arr.length%2==0){
+            isPalindrome=false;
+            return;
+        }
+        System.out.println("Runing while loop: ");
         while(left<right){
             if(arr[left]==arr[right]){
                 left++;

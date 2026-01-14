@@ -1,0 +1,95 @@
+SpaceStation Oxygen System
+Scenario Description
+You are tasked with designing the OxygenSystem module for a futuristic SpaceStation. The system manages multiple oxygen tanks, tracks total oxygen supply, and ensures astronauts get a safe and controlled supply.
+
+Context
+Each oxygen tank has:
+
+tankID (unique ID of the tank)
+currentOxygenLevel (liters of oxygen currently in the tank)
+maxCapacity (maximum oxygen the tank can hold)
+status (ACTIVE or INACTIVE – inactive tanks cannot supply oxygen)
+The station also tracks:
+
+totalOxygenInStation (total oxygen across all active tanks – static field)
+totalTanks (total number of tanks created – static field)
+Requirements
+Private Fields & Encapsulation
+
+All fields must be private.
+External modules cannot directly modify oxygen levels, status, or total counts.
+Tank Status
+
+Only ACTIVE tanks contribute to the total oxygen.
+Inactive tanks cannot add or dispense oxygen.
+Controlled Access
+
+Public methods must include:
+addOxygen(int liters) → adds oxygen safely only if tank is active and does not exceed max capacity.
+consumeOxygen(int liters) → consumes oxygen only if tank is active and does not drop below zero.
+activateTank() and deactivateTank() → change tank status.
+getCurrentOxygenLevel() → read-only access to this tank’s oxygen.
+getMaxCapacity() → read-only access.
+getTankStatus() → read-only access.
+Static methods:
+getTotalOxygenInStation() → returns total oxygen across active tanks.
+getTotalTanks() → returns the total number of tanks created.
+Initializers
+
+Static initializer: set totalOxygenInStation and totalTanks to 0.
+Non-static initializer: assign a unique tankID automatically when a tank is created.
+Validation
+
+Prevent overfilling beyond max capacity.
+Prevent negative oxygen.
+Prevent operations on inactive tanks.
+Advanced Feature
+
+Automatic update of totalOxygenInStation whenever an active tank’s oxygen changes.
+Changing a tank to inactive removes its oxygen from total. Activating it adds its current oxygen back to total.
+Tasks for Students
+​
+Create an OxygenSystem class.
+Implement private fields, static and non-static variables, and initializer blocks.
+Implement methods to safely add/consume oxygen, change tank status, and read oxygen levels.
+Implement static methods to read total oxygen and total tanks.
+Ensure all validations and automatic updates for total oxygen.
+Example
+Setup:
+
+Tank 1: max 500 liters, ACTIVE, starts empty
+Tank 2: max 300 liters, ACTIVE, starts empty
+Tank 3: max 200 liters, INACTIVE, starts empty
+Actions:
+
+Add 400 liters to Tank 1.
+Add 200 liters to Tank 2.
+Attempt to add 100 liters to Tank 3 (inactive).
+Consume 50 liters from Tank 1.
+Deactivate Tank 2.
+Activate Tank 3 and add 150 liters.
+Check individual tank levels and statuses.
+Check total oxygen in station and total number of tanks.
+Expected Output
+Tank 1 current oxygen: 400 liters
+Tank 2 current oxygen: 200 liters
+Cannot add oxygen: Tank 3 is inactive
+Tank 1 consumed 50 liters. Current level: 350 liters
+Tank 2 deactivated. Oxygen removed from station total.
+Tank 3 activated.
+Tank 3 current oxygen: 150 liters
+Tank 1 status: ACTIVE, oxygen: 350 liters
+Tank 2 status: INACTIVE, oxygen: 200 liters
+Tank 3 status: ACTIVE, oxygen: 150 liters
+Total oxygen in station: 500 liters
+Total tanks created: 3
+
+Learning Objectives
+Deepen understanding of encapsulation and controlled access.
+Practice static vs non-static fields and methods.
+Implement initializer blocks for static and instance variables.
+Handle conditional updates based on tank status.
+Maintain data integrity across multiple objects with shared state.
+Understand how private fields + public methods enforce safe system behavior in critical applications.
+Note to Students:
+All oxygen operations must validate status and capacity. Changing tank status must automatically update the station’s total oxygen. Direct manipulation of oxygen levels or totals outside the class is prohibited.

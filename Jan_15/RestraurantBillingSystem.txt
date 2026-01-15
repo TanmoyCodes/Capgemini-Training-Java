@@ -1,0 +1,23 @@
+Restaurant Billing Calculation
+Question Description
+A restaurant wants a billing system that computes the final bill based on menu prices, optional service charges, and optional tip percentage.
+
+Implement overloaded methods named bill to calculate the final payable amount.
+
+Methods to Implement
+double bill(double[] items)
+double bill(double[] items, boolean serviceCharge)
+double bill(double[] items, boolean serviceCharge, double tipPercent)
+Rules
+Base Amount = sum of all item prices
+Service Charge = add 5% if service charge is applied
+Tip = tipPercent% applied after adding the service charge
+Hardcoded Data Set to Use
+Items = [250, 180, 420]
+Service Charge = true
+Tip Percent = 10
+Expected Output
+Base = 850
+Service Charge = 42.5 --> 892.5
+Tip 10.0% = 89.25
+Final = 981.75

@@ -1,0 +1,57 @@
+Training Progress Evaluation System
+Your organization wants to build an internal tool to track the progress of employees undergoing different types of training programs. As a developer, you are asked to create a simple Java-based object-oriented model for this system.
+
+a. Create an abstract class Trainee with the following:
+Fields:
+id
+name
+trainingType
+Abstract Method:
+double calculateProgressScore()
+Concrete Method:
+displayDetails() → prints trainee info
+b. Create two subclasses:
+1. TechnicalTrainee
+Additional field:
+
+modulesCompleted
+Progress formula:
+
+score = modulesCompleted × 10
+2. SoftSkillTrainee
+Additional field:
+
+sessionsAttended
+Progress formula:
+
+score = sessionsAttended × 8
+c. Create a class TrainingReport that:
+Accepts a List<Trainee>
+Prints progress scores for each trainee
+Identifies and prints the top performer
+Demonstrates polymorphism by storing both trainee types in a single List
+Dataset to Use:
+Use these trainees inside main:
+
+ID	Name	Training Type	Extra Field Type	Extra Value
+T01	Amit	Technical	modulesCompleted	12
+T02	Neha	Soft Skill	sessionsAttended	15
+T03	Rohit	Technical	modulesCompleted	9
+T04	Sneha	Soft Skill	sessionsAttended	20
+Expected Output:
+Trainee Details:
+T01 - Amit - Technical
+Progress Score: 120.0
+
+
+T02 - Neha - Soft Skill
+Progress Score: 120.0
+
+T03 - Rohit - Technical
+Progress Score: 90.0
+
+T04 - Sneha - Soft Skill
+Progress Score: 160.0
+
+Top Performer:
+Sneha with a score of 160.0

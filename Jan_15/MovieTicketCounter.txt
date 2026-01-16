@@ -1,0 +1,37 @@
+Movie Ticket Booking Counter
+Question Description
+A cinema wants to track ticket bookings.
+
+Each ticket booking has:
+
+A fixed ticket price of ₹250 per ticket
+A movie name
+A number of tickets booked
+The cinema management also wants to track the total number of tickets sold across all bookings.
+
+Requirements
+Create a class named TicketBooking.
+Store the following non-static data members:
+movieName
+ticketPrice (hardcoded as 250)
+Maintain a static variable to track the total tickets sold.
+Use a constructor that:
+Accepts movie name and number of tickets booked
+Updates the total tickets sold
+Create a method to:
+Calculate and display the total cost for each booking
+In the main class:
+Create ticket bookings using hardcoded values
+Display the bill for each booking
+Display the total tickets sold
+UML Diagram
+​
+Hardcoded Data Set to Use
+Movie Name	Tickets Booked
+Inception	2
+Avatar	3
+Expected Output
+Inception Total Cost: 500
+Avatar Total Cost: 750
+
+Total Tickets Sold: 5
